@@ -21,3 +21,11 @@ spec:
           resources:
             requests:
               cpu: 500m
+          volumeMounts:
+            - mountPath: /data
+              name: data
+      volumes:
+        - name: data
+          hostPath:
+            path: "/Users/neel/Documents/Work/Spark-On-Kubernetes/data"
+            type: Directory

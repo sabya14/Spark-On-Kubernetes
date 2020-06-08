@@ -21,3 +21,14 @@ spec:
             - containerPort: 8080
             - containerPort: 7077
             - containerPort: 6066
+          resources:
+            requests:
+              cpu: 200m
+          volumeMounts:
+            - mountPath: /data
+              name: data
+      volumes:
+        - name: data
+          hostPath:
+            path: "/Users/neel/Documents/Work/Spark-On-Kubernetes/data"
+            type: Directory
